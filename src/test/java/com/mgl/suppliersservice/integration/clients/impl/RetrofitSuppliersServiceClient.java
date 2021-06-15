@@ -4,6 +4,7 @@ import com.mgl.suppliersservice.integration.clients.SuppliersServiceClient;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierRequest;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
+import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSuppliersResponse;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -38,5 +39,12 @@ public class RetrofitSuppliersServiceClient  implements SuppliersServiceClient {
     public DeleteSupplierResponse deleteSupplier(String supplierId) throws Exception {
         Call<DeleteSupplierResponse> call = retrofitClient.deleteSupplier(supplierId);
         return call.execute().body();
+    }
+
+    @Override
+    public GetSupplierResponse getSupplier(String supplierId) throws Exception {
+        Call<GetSupplierResponse> call = retrofitClient.getSupplier(supplierId);
+        Response<GetSupplierResponse> getResponse = call.execute();
+        return getResponse.body();
     }
 }

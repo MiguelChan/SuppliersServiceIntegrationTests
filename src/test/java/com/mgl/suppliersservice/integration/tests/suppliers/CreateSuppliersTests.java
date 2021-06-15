@@ -6,14 +6,16 @@ import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierRequest;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.models.Supplier;
 import com.mgl.suppliersservice.integration.tests.BaseTests;
+import com.mgl.suppliersservice.integration.utils.TestConstants;
 import io.github.benas.randombeans.api.EnhancedRandom;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-@Test
+@Test(groups = TestConstants.SUPPLIER_WORKFLOW_NAME)
 public class CreateSuppliersTests extends BaseTests {
 
     @Test
-    public void createSupplier_should_createASupplier() throws Exception {
+    public void createSupplier_should_createASupplier(ITestContext testContext) throws Exception {
         Supplier randomSupplier = EnhancedRandom.random(Supplier.class);
 
         CreateSupplierRequest request = CreateSupplierRequest.builder()
@@ -24,6 +26,8 @@ public class CreateSuppliersTests extends BaseTests {
 
         assertNotNull(response);
         assertNotNull(response.getSupplierId());
+
+        testContext.setAttribute(TestConstants.SHARED_SUPPLIER_ID, response.getSupplierId());
     }
 
 }
