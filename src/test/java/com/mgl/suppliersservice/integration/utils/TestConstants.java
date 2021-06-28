@@ -4,5 +4,6 @@ public class TestConstants {
 
     public static final String SUPPLIER_WORKFLOW_NAME = "CreateSupplierWorkflow";
     public static final String SHARED_SUPPLIER_ID = "SharedSupplierId";
+    public static final String SHARED_SUPPLIER = "SharedSupplier";
 
 }
