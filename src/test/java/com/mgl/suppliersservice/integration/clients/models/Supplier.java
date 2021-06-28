@@ -1,14 +1,15 @@
 package com.mgl.suppliersservice.integration.clients.models;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Setter;
 
 /**
  * .
  */
 @Data
+@Setter
 @Builder(toBuilder = true)
 public class Supplier {
 
