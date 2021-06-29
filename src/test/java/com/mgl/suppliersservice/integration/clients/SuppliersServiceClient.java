@@ -2,6 +2,7 @@ package com.mgl.suppliersservice.integration.clients;
 
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierRequest;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierResponse;
+import com.mgl.suppliersservice.integration.clients.dto.DeleteContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSuppliersResponse;
@@ -17,4 +18,5 @@ public interface SuppliersServiceClient {
     CreateSupplierResponse createSupplier(CreateSupplierRequest request) throws Exception;
     DeleteSupplierResponse deleteSupplier(String supplierId) throws Exception;
     GetSupplierResponse getSupplier(String supplierId) throws Exception;
+    DeleteContactResponse deleteContact(String contactId) throws Exception;
 }

@@ -3,6 +3,7 @@ package com.mgl.suppliersservice.integration.clients.impl;
 import com.mgl.suppliersservice.integration.clients.SuppliersServiceClient;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierRequest;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierResponse;
+import com.mgl.suppliersservice.integration.clients.dto.DeleteContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSuppliersResponse;
@@ -46,5 +47,12 @@ public class RetrofitSuppliersServiceClient  implements SuppliersServiceClient {
         Call<GetSupplierResponse> call = retrofitClient.getSupplier(supplierId);
         Response<GetSupplierResponse> getResponse = call.execute();
         return getResponse.body();
+    }
+
+    @Override
+    public DeleteContactResponse deleteContact(String contactId) throws Exception {
+        Call<DeleteContactResponse> call = retrofitClient.deleteContact(contactId);
+        Response<DeleteContactResponse> deleteResponse = call.execute();
+        return deleteResponse.body();
     }
 }

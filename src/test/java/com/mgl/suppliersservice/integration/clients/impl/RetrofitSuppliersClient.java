@@ -2,6 +2,7 @@ package com.mgl.suppliersservice.integration.clients.impl;
 
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierRequest;
 import com.mgl.suppliersservice.integration.clients.dto.CreateSupplierResponse;
+import com.mgl.suppliersservice.integration.clients.dto.DeleteContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSuppliersResponse;
@@ -29,5 +30,8 @@ public interface RetrofitSuppliersClient {
 
     @GET("suppliers/{supplierId}")
     Call<GetSupplierResponse> getSupplier(@Path("supplierId") String supplierId);
+
+    @DELETE("contacts/{contactId}")
+    Call<DeleteContactResponse> deleteContact(@Path("contactId") String contactId);
 
 }
