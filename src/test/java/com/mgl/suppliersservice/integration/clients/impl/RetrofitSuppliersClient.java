@@ -6,6 +6,8 @@ import com.mgl.suppliersservice.integration.clients.dto.DeleteContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.EditContactRequest;
 import com.mgl.suppliersservice.integration.clients.dto.EditContactResponse;
+import com.mgl.suppliersservice.integration.clients.dto.EditSupplierRequest;
+import com.mgl.suppliersservice.integration.clients.dto.EditSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetContactsForSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
@@ -48,5 +50,9 @@ public interface RetrofitSuppliersClient {
 
     @GET("contacts")
     Call<GetContactsForSupplierResponse> getContactsForSupplier(@Query("supplierId") String supplierId);
+
+    @PUT("suppliers/{supplierId}")
+    Call<EditSupplierResponse> editSupplier(@Path("supplierId") String supplierId,
+                                            @Body EditSupplierRequest request);
 
 }

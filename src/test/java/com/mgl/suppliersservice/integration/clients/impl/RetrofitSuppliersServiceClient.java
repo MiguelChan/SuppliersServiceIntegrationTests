@@ -7,6 +7,8 @@ import com.mgl.suppliersservice.integration.clients.dto.DeleteContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.DeleteSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.EditContactRequest;
 import com.mgl.suppliersservice.integration.clients.dto.EditContactResponse;
+import com.mgl.suppliersservice.integration.clients.dto.EditSupplierRequest;
+import com.mgl.suppliersservice.integration.clients.dto.EditSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetContactResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetContactsForSupplierResponse;
 import com.mgl.suppliersservice.integration.clients.dto.GetSupplierResponse;
@@ -79,5 +81,13 @@ public class RetrofitSuppliersServiceClient  implements SuppliersServiceClient {
         Call<GetContactResponse> call = retrofitClient.getContact(contactId);
         Response<GetContactResponse> getResponse = call.execute();
         return getResponse.body();
+    }
+
+    @Override
+    public EditSupplierResponse editSupplier(String supplierId, EditSupplierRequest request)
+        throws Exception {
+        Call<EditSupplierResponse> call = retrofitClient.editSupplier(supplierId, request);
+        Response<EditSupplierResponse> putResponse = call.execute();
+        return putResponse.body();
     }
 }
