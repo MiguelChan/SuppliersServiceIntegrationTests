@@ -10,11 +10,11 @@ import lombok.Data;
 @Builder(toBuilder = true)
 public class Contact {
 
-    private final String id;
-    private final String firstName;
-    private final String lastName;
-    private final String emailAddress;
-    private final String phoneNumber;
-    private final ContactType contactType;
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
+    private String phoneNumber;
+    private ContactType contactType;
 
 }
